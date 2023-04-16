@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+package spacex;
+
+message Rocket {
+  string rocket_id = 1;
+  string rocket_name = 2;
+  string rocket_type = 3;
+}
+
+message RocketRequest {
+  string rocket_id = 1;
+}
+
+service SpaceX {
+  rpc GetRocket(RocketRequest) returns (Rocket) {}
+}
